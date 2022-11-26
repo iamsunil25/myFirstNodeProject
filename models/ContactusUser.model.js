@@ -9,11 +9,13 @@ const contactUSchema = Schema({
 	},
 email:{
 	type:String,
-     require:true
+     require:true,
+	 unique:true
 	},
 	contact_number:{
 		type:String,
-		require:true
+		require:true,
+		unique:true
 	},
 	message:{
 type:String,
