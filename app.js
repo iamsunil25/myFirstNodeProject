@@ -14,7 +14,7 @@ const logger = require("morgan")
 const app = express()
 const bodyParser = require("body-parser")
 // let whitelist = ['https://iamsunil25.github.io/portfolio',]
-// const cors = require("cors")
+const cors = require("cors")
 // var corsOptions = {
 //   origin: function (origin, callback) {
 //     if (whitelist.indexOf(origin) !== -1 || !origin) {
@@ -24,6 +24,8 @@ const bodyParser = require("body-parser")
 //     }
 //   }
 // }
+app.use(cors());
+app.options('*', cors());
 const port = process.env.PORT || 3000
 // middleware
 app.use(express.json())
