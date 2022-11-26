@@ -13,24 +13,24 @@ const contactUsRouter = require("./routes/Portfolio.route");
 const logger = require("morgan")
 const app = express()
 const bodyParser = require("body-parser")
-let whitelist = ['https://iamsunil25.github.io/portfolio',]
-const cors = require("cors")
-var corsOptions = {
-  origin: function (origin, callback) {
-    if (whitelist.indexOf(origin) !== -1 || !origin) {
-      callback(null, true)
-    } else {
-      callback(new Error('Not allowed by CORS'))
-    }
-  }
-}
+// let whitelist = ['https://iamsunil25.github.io/portfolio',]
+// const cors = require("cors")
+// var corsOptions = {
+//   origin: function (origin, callback) {
+//     if (whitelist.indexOf(origin) !== -1 || !origin) {
+//       callback(null, true)
+//     } else {
+//       callback(new Error('Not allowed by CORS'))
+//     }
+//   }
+// }
 const port = process.env.PORT || 3000
 // middleware
 app.use(express.json())
 // Parses the text as url encoded data
 app.use(bodyParser.urlencoded({extended: true}));
 
-app.use(cors(corsOptions));
+// app.use(cors(corsOptions));
 // Parses the text as json
 app.use(bodyParser.json());
  
