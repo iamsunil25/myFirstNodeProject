@@ -24,7 +24,7 @@ var corsOptions = {
     }
   }
 }
-const port = process.env.PORT || 3500
+const port = process.env.PORT || 3000
 // middleware
 app.use(express.json())
 // Parses the text as url encoded data

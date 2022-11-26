@@ -6,5 +6,4 @@ addContactUsDetailsController
 const router = express.Router();
  
 router.route("/contact-us").post(addContactUsDetailsController)
-
 module.exports = router;

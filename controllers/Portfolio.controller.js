@@ -8,6 +8,7 @@ res.status(201).json({contactUsData:contactData,message:"Contactus Details Store
 }
 
 
+
 module.exports ={
-	addContactUsDetailsController
+	addContactUsDetailsController,
 }
