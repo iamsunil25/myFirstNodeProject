@@ -9,9 +9,9 @@ const addContactUsDetailsService = async (contactDetails)=>{
 	
 	console.log("req body",isConatctUsDetailsAlreadyPresent);
 	
-	if(isConatctUsDetailsAlreadyPresent &&  isConatctUsDetailsAlreadyPresent[0])
-	{
-	throw new Error("You have already filled the form")
+	if(isConatctUsDetailsAlreadyPresent.length===0){
+		console.log("filled data", isConatctUsDetailsAlreadyPresent[0]);
+	 throw new Error("You have already filled the form")
     }
 
 
