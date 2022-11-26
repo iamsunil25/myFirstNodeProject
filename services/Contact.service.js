@@ -6,11 +6,11 @@ const addContactUsDetailsService = async (contactDetails)=>{
 	try {
 		console.log("req body",contactDetails);
 
-	let isConatctUsDetailsAlreadyPresent = await ContactUsModel.find({$or: [ {contactNumber:{$eq: contactDetails.contact_number}}, {email:{$eq: contactDetails.email}} ] }) 
+	let isConatctUsDetailsAlreadyPresent = await ContactUsModel.findOne({email: contactDetails.email}) 
 	console.log("🚀 ~ file: Contact.service.js ~ line 10 ~ addContactUsDetailsService ~ isConatctUsDetailsAlreadyPresent", isConatctUsDetailsAlreadyPresent)
 	
 	
-	if(isConatctUsDetailsAlreadyPresent.length!==0){
+	if(isConatctUsDetailsAlreadyPresent){
 		console.log("filled data", isConatctUsDetailsAlreadyPresent);
 	 throw new Error("You have already filled the form")
     }
