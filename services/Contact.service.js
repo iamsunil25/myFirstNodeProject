@@ -5,12 +5,16 @@ const { sendEmail } = require("./email.service");
 const addContactUsDetailsService = async (contactDetails)=>{
 	try {
 	let {contact_number, email} = contactDetails; 
-	let isConatctUsDetailsAlreadyPresent = await ContactUsModel.find({$or :[{contactNumber:contact_number}, {email:email}]}) 
+	let isConatctUsDetailsAlreadyPresent = await ContactUsModel.find({$or: [ {contactNumber:{$eq: contact_number}}, {email:{$eq: email}} ] }) 
 	
-	console.log("isConatctUsDetailsAlreadyPresent",isConatctUsDetailsAlreadyPresent);
-		if( isConatctUsDetailsAlreadyPresent && isConatctUsDetailsAlreadyPresent[0] && isConatctUsDetailsAlreadyPresent[0].email ){
+	console.log("req body",isConatctUsDetailsAlreadyPresent);
+	
+	if(isConatctUsDetailsAlreadyPresent)
+	{
 	throw new Error("You have already filled the form")
-}
+    }
+
+
 		let addContactData = await ContactUsModel.create(contactDetails) 
 		if(addContactData){
 		await sendEmail(contactDetails)
