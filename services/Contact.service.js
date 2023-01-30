@@ -5,7 +5,6 @@ const { sendEmail } = require("./email.service");
 const addContactUsDetailsService = async (contactDetails)=>{
 	try {
 		console.log("req body",contactDetails);
-
 	let isConatctUsDetailsAlreadyPresent = await ContactUsModel.findOne({email: contactDetails.email}) 
 	console.log("🚀 ~ file: Contact.service.js ~ line 10 ~ addContactUsDetailsService ~ isConatctUsDetailsAlreadyPresent", isConatctUsDetailsAlreadyPresent)
 	
