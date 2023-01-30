@@ -12,6 +12,7 @@ const addContactUsDetailsService = async (contactDetails)=>{
 	if(isConatctUsDetailsAlreadyPresent){
 		console.log("filled data", isConatctUsDetailsAlreadyPresent);
 	 throw new Error("You have already filled the form")
+	 return;
     }
 
 

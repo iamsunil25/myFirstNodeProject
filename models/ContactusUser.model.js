@@ -21,8 +21,11 @@ email:{
 type:String,
 require:false,
 default:""
-	}
-})
+	},
+
+},	{
+	timestamps: true
+  })
 
 const ContactUsModel = mongoose.model("ContactUsData", contactUSchema)
 module.exports ={

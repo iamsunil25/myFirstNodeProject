@@ -7,9 +7,10 @@ const addContactUsDetailsController = async (req, res)=>{
 	if(!token || !contactUsData) return;
 
 let contactData = await addContactUsDetailsService(contactUsData);
+const isError= Object.keys(contactData).length==0 ? true:false;
 await verifyCaptchaToken(token);	
 // if(!isTokenVerified.status) return isTokenVerified;
-res.status(201).json({contactUsData:contactData,message:"Contact-us Details Stored Successfully"})
+res.status(201).json({contactUsData:contactData,message: isError ? "email is already present in db": "Contact-us Details Stored Successfully"})
 }
 
 module.exports ={
