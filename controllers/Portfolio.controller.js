@@ -8,11 +8,9 @@ const addContactUsDetailsController = async (req, res)=>{
 	if(!contactUsData) return;
 
 let contactData = await addContactUsDetailsService(contactUsData);
+console.log("🚀 ~ file: Portfolio.controller.js:11 ~ addContactUsDetailsController ~ contactData:", contactData)
 
-// duplicate email
-if(contactData?.code===11000){	
-	res.status(409).json({message: "You have already raised a query with this data."})
-}
+
 
 // verify google captcha
 await verifyCaptchaToken(token);	
