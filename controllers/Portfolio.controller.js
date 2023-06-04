@@ -8,7 +8,7 @@ const addContactUsDetailsController = async (req, res)=>{
 	if(!contactUsData) return;
 
 let contactData = await addContactUsDetailsService(contactUsData);
-if(contactData && contactData?.code === 11000){	
+if(contactData && contactData.code === 11000){	
 	// console.log("🚀 sunil_lund",contactData.code)
 	res.status(409).json({message: "You have already raised a query with this data."})
 }
