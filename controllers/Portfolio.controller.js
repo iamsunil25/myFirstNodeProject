@@ -8,12 +8,14 @@ const addContactUsDetailsController = async (req, res)=>{
 	if(!contactUsData) return;
 
 let contactData = await addContactUsDetailsService(contactUsData);
-console.log("🚀 ~ file: Portfolio.controller.js:11 ~ addContactUsDetailsController ~ contactData:", contactData)
-
+if(contactData && contactData?.code === 11000){	
+	// console.log("🚀 sunil_lund",contactData.code)
+	res.status(409).json({message: "You have already raised a query with this data."})
+}
 
 
 // verify google captcha
-await verifyCaptchaToken(token);	
+ verifyCaptchaToken(token);	
 res.status(201).json({message: "Your query raised Successfully."})
 }
 

@@ -1,10 +1,8 @@
-
 require('./mongodb')
-
 const express = require("express")
 const { SERVER_LISTENING_MESSAGE } = require("./constantMessage")
 global.XMLHttpRequest = require('xhr2');
-const contactUsRouter = require("./routes/Portfolio/index");
+const contactUsRouter = require("./routes/Portfolio.route");
 
 const logger = require("morgan")
 const app = express()

@@ -22,12 +22,10 @@ const addContactUsDetailsService = async (contactDetails)=>{
 return addContactData;
 	} catch (error) {
 		console.log("error while storing contact details", error);
-	
-		// duplicate email
-if(error?.code===11000){	
-	throw new Error("You have already raised a query with this data.You can raised only single query.")
-}
-throw new Error(error)
+		if(error?.code===11000){	
+return error;
+		}
+		throw new Error(error)
 	}
 
 }
