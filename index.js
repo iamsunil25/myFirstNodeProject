@@ -7,7 +7,8 @@ const contactUsRouter = require("./routes/Portfolio.route");
 const logger = require("morgan")
 const app = express()
 const bodyParser = require("body-parser")
-const cors = require("cors")
+const cors = require("cors");
+const { ignoreFavicon } = require('./utility/utilityFunction');
 app.use(cors());
 app.options('*', cors());
 const port = process.env.PORT || 3000
@@ -21,7 +22,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
  
 app.use(logger("tiny"))
- 
+app.use(ignoreFavicon);
 app.use("/portfolio", contactUsRouter);
 app.listen(port,()=>{
 	console.log(`${SERVER_LISTENING_MESSAGE} ${port} `);
