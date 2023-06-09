@@ -1,14 +1,14 @@
-require('./mongodb')
+require('../mongodb')
 const express = require("express")
-const { SERVER_LISTENING_MESSAGE } = require("./constantMessage")
+const { SERVER_LISTENING_MESSAGE } = require("../constantMessage")
 global.XMLHttpRequest = require('xhr2');
-const contactUsRouter = require("./routes/Portfolio.route");
+const contactUsRouter = require("../routes/Portfolio.route");
 
 const logger = require("morgan")
 const app = express()
 const bodyParser = require("body-parser")
 const cors = require("cors");
-const { ignoreFavicon } = require('./utility/utilityFunction');
+const { ignoreFavicon } = require('../utility/utilityFunction');
 app.use(cors());
 app.options('*', cors());
 const port = process.env.PORT || 3000
