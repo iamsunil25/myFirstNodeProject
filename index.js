@@ -10,13 +10,12 @@ const bodyParser = require("body-parser")
 const cors = require("cors");
 const { ignoreFavicon } = require('./utility/utilityFunction');
 app.use(cors({ origin: '*' }));
-// app.use(cors({
-// 	origin:'https://iamsunil25.github.io',
-// 	methods: ['GET', 'POST', 'HEAD', 'OPTIONS'],
-//     allowedHeaders: ['Content-Type', 'Origin', 'X-Requested-With', 'Accept', 'x-client-key', 'x-client-token', 'x-client-secret', 'Authorization'],
-//     credentials: true
-// }));
-// app.options('*', cors());
+app.use(function(req, res, next) {
+	res.header("Access-Control-Allow-Origin", "*");
+	res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+	next();
+  });
+  
 const port = process.env.PORT || 3000
 // middleware
 app.use(express.json())
