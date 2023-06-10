@@ -28,7 +28,7 @@ app.use(bodyParser.json());
  
 app.use(logger("tiny"))
 app.use(ignoreFavicon);
-app.use("/",async(req,res)=>{
+app.get("/welcome",async(req,res)=>{
 	res.status(200).json({message: "Hurray! Server is listening..."})
 })
 app.use("/portfolio", contactUsRouter);
