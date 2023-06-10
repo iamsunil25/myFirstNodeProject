@@ -9,12 +9,13 @@ const app = express()
 const bodyParser = require("body-parser")
 const cors = require("cors");
 const { ignoreFavicon } = require('./utility/utilityFunction');
-app.use(cors({
-	origin:'https://iamsunil25.github.io',
-	methods: ['GET', 'POST', 'HEAD', 'OPTIONS'],
-    allowedHeaders: ['Content-Type', 'Origin', 'X-Requested-With', 'Accept', 'x-client-key', 'x-client-token', 'x-client-secret', 'Authorization'],
-    credentials: true
-}));
+app.use(cors());
+// app.use(cors({
+// 	origin:'https://iamsunil25.github.io',
+// 	methods: ['GET', 'POST', 'HEAD', 'OPTIONS'],
+//     allowedHeaders: ['Content-Type', 'Origin', 'X-Requested-With', 'Accept', 'x-client-key', 'x-client-token', 'x-client-secret', 'Authorization'],
+//     credentials: true
+// }));
 // app.options('*', cors());
 const port = process.env.PORT || 3000
 // middleware
