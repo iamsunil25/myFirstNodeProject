@@ -9,7 +9,7 @@ const app = express()
 const bodyParser = require("body-parser")
 const cors = require("cors");
 const { ignoreFavicon } = require('./utility/utilityFunction');
-app.use(cors());
+app.use(cors({ origin: 'https://iamsunil25.github.io' }));
 // app.use(cors({
 // 	origin:'https://iamsunil25.github.io',
 // 	methods: ['GET', 'POST', 'HEAD', 'OPTIONS'],
