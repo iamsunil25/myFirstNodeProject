@@ -8,7 +8,7 @@ const logger = require("morgan")
 const app = express()
 const bodyParser = require("body-parser")
 const cors = require("cors");
-const { ignoreFavicon } = require('./utility/utilityFunction');
+// const { ignoreFavicon } = require('./utility/utilityFunction');
 app.use(cors({ origin: '*' }));
 app.use(function(req, res, next) {
 	res.header("Access-Control-Allow-Origin", "*");
@@ -27,7 +27,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
  
 app.use(logger("tiny"))
-app.use(ignoreFavicon);
+// app.use(ignoreFavicon);
 app.use("/portfolio", contactUsRouter);
 app.listen(port,()=>{
 	console.log(`${SERVER_LISTENING_MESSAGE} ${port} `);
