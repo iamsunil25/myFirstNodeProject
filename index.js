@@ -8,9 +8,8 @@ const logger = require("morgan")
 const app = express()
 const bodyParser = require("body-parser")
 const cors = require("cors");
-// const { ignoreFavicon } = require('./utility/utilityFunction');
-const corsOptions = ["https://iamsunil25.github.io/portfolio"] // (You can ur server also)
-app.use(cors(corsOptions))
+app.use(cors());
+app.options('*', cors()); 
 // app.use(cors({ origin: '*' }));
 app.use(function(req, res, next) {
 	res.header("Access-Control-Allow-Origin", "*");
