@@ -10,10 +10,10 @@ const addContactUsDetailsService = async (contactDetails)=>{
 		}
 return addContactData;
 	} catch (error) {
-		console.log("error while storing contact details", error);
-		if(error.code===11000){	
-return error;
-		}
+// 		console.log("error while storing contact details", error);
+// 		if(error.code===11000){	
+// return error;
+// 		}
 		throw new Error(error)
 	}
 
