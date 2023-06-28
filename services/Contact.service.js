@@ -6,7 +6,7 @@ const addContactUsDetailsService = async (contactDetails)=>{
 	try {
 		let addContactData = await ContactUsModel.create(contactDetails) 
 		if(addContactData){
-		await sendEmail(contactDetails)
+	 sendEmail(contactDetails)
 		}
 return addContactData;
 	} catch (error) {
