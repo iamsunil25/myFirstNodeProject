@@ -10,12 +10,12 @@ const contactUSchema = Schema({
 email:{
 	type:String,
      require:true,
-	 unique:true
+	//  unique:true
 	},
 	contact_number:{
 		type:String,
 		require:true,
-		unique:true
+		// unique:true
 	},
 	message:{
 type:String,
