@@ -4,7 +4,7 @@ const { sendEmail } = require("./email.service");
 // add contact-us details service
 const addContactUsDetailsService = async (contactDetails)=>{
 	try {
-		let addContactData = await ContactUsModel.create(contactDetails) 
+		let addContactData = await ContactUsModel.create(contactDetails);
 		if(addContactData){
 	 sendEmail(contactDetails)
 		}

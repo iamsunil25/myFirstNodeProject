@@ -8,10 +8,7 @@ const addContactUsDetailsController = async (req, res)=>{
 	if(!token ) return;
 	if(!contactUsData) return;
 
-let contactData = await addContactUsDetailsService(contactUsData);
-// if(contactData && contactData.code === 11000){	
-// 	res.status(409).json({message: ALREADY_RAISED_QUERY})
-// }
+await addContactUsDetailsService(contactUsData);
 // verify google captcha
  verifyCaptchaToken(token);	
 res.status(201).json({message: QUERY_RAISED_SUCCESSFULL})
