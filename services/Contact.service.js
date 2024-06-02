@@ -4,8 +4,10 @@ const { sendEmail } = require("./email.service");
 // add contact-us details service
 const addContactUsDetailsService = async (contactDetails)=>{
 	try {
-			sendEmail(contactDetails)
-		await ContactUsModel.create(contactDetails);
+		// let addContactData = await ContactUsModel.create(contactDetails);
+		if(true){
+	 sendEmail(contactDetails)
+		}
 return {success:true};
 	} catch (error) {
 // 		console.log("error while storing contact details", error);
