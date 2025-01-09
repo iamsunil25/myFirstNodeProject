@@ -40,7 +40,7 @@ const mailOptions = {
 	from: process.env.SMTP_USERNAME, // Sender's email address
 	to: contactDetails?.email, // Recipient's email address
 	subject: `New enquiry received from portfolio`, // Email subject
-	text: htmlContent, // Email body
+	html: htmlContent, // Email body
   };
 await sendEmail(mailOptions)
 
