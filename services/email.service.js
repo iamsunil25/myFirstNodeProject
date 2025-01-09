@@ -38,7 +38,7 @@ const htmlContent = `<!DOCTYPE html>
 </html>`
 const mailOptions = {
 	from: process.env.SMTP_USERNAME, // Sender's email address
-	to: contactDetails?.email, // Recipient's email address
+	to: process.env.RECEIVER_EMAIL, // Recipient's email address
 	subject: `New enquiry received from portfolio`, // Email subject
 	html: htmlContent, // Email body
   };
